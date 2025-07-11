@@ -118,7 +118,7 @@ if uploaded_files:
         add_files_to_vector_store(st.session_state.vector_store.id, file_streams)
 
     st.session_state.uploaded_file_names.update(file.name for file in uploaded_files)
-    # st.success(f"Uploaded {len(uploaded_files)} new file(s).")
+    st.success(f"Uploaded {len(uploaded_files)} new file(s).")
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~ CREATE YOUR ASSISTANT BELOW ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -142,10 +142,10 @@ if uploaded_files:
         thread = client.beta.threads.create()
         st.session_state.thread_id = thread.id
 
-    # Show uploaded files
-    st.write("Uploaded files:")
-    for file in uploaded_files:
-        st.write(f"• {file.name}")
+    # # Show uploaded files
+    # st.write("Uploaded files:")
+    # for file in uploaded_files:
+    #     st.write(f"• {file.name}")
 
     st.session_state.files_uploaded = True
 
